@@ -1,0 +1,56 @@
+version: '3'
+services:
+  mongo:
+    restart: always
+    image: mongo
+    volumes:
+      - ./university-api/data:/data/db
+    ports:
+      - '27017:27017'
+  mongo-seed:
+    build: ./load-fixtures
+    links:
+      - mongo
+    volumes:
+      - ./load-fixtures/fixtures:/fixtures
+    depends_on:
+      - mongo
+    environment:
+      WAIT_HOSTS: mongo:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - '8081:8081'
+  api:
+    restart: always
+    build:
+      context: ./university-api
+      args:
+        PORT: 3001
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongo
+      - mongo-seed
+    links:
+      - mongo
+    environment:
+      WAIT_HOSTS: mongo:27017
+  spa:
+    restart: always
+    build:
+      context: ./university-spa
+      args:
+        PORT: 80
+    ports:
+      - "80:80"
+    depends_on:
+      - mongo
+      - mongo-seed
+    links:
+      - mongo
+    environment:
+      WAIT_HOSTS: mongo:27017, api:3001

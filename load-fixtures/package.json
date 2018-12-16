@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "node-mongodb-fixtures": "^2.2.1"
+  },
+  "scripts": {
+    "load": "mongodb-fixtures load -u",
+    "unload": "mongodb-fixtures unload -u"
+  }
+}
+

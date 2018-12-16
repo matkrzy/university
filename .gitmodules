@@ -1,0 +1,8 @@
+[submodule "university-api"]
+	path = university-api
+	url = https://github.com/matkrzy/university-api.git
+	branch = develop
+[submodule "university-spa"]
+	path = university-spa
+	url = https://github.com/matkrzy/university-spa.git
+	branch = develop
