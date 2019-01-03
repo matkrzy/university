@@ -28,8 +28,7 @@ remove:
 
 load-fixtures:
 	@echo Loading fixtures..
-	@cd ./load-fixtures
-	@make load-fixtures
+	@docker-compose run mongo-seed
 
 update-repos:
 	git submodule foreach git fetch -a
