@@ -7,7 +7,7 @@ load-fixtures:
 	@make load
 
 load:
-	@yarn load -- mongodb://mongo:27017/$(TYPEORM_DATABASE) --path $(FIXTURES_PATH)
+	@yarn load mongodb://mongo:27017/$(TYPEORM_DATABASE) path $(FIXTURES_PATH)
 
 unload:
-	@yarn unload -- mongodb://mongo:27017/$(TYPEORM_DATABASE) --path $(FIXTURES_PATH)
+	@yarn unload mongodb://mongo:27017/$(TYPEORM_DATABASE) path $(FIXTURES_PATH)
