@@ -1,6 +1,7 @@
 version: '3'
 services:
   mongo:
+    container_name: mongo
     restart: always
     image: mongo
     volumes:
@@ -8,6 +9,7 @@ services:
     ports:
       - '27017:27017'
   mongo-seed:
+    container_name: mongo-seed
     build: ./load-fixtures
     links:
       - mongo
@@ -18,6 +20,7 @@ services:
     environment:
       WAIT_HOSTS: mongo:27017
   mongo-express:
+    container_name: mongo-express
     image: mongo-express
     restart: always
     depends_on:
@@ -25,6 +28,7 @@ services:
     ports:
       - '8081:8081'
   api:
+    container_name: api
     restart: always
     build:
       context: ./university-api
@@ -37,9 +41,11 @@ services:
       - mongo-seed
     links:
       - mongo
+      - spa
     environment:
       WAIT_HOSTS: mongo:27017
   spa:
+    container_name: spa
     restart: always
     build:
       context: ./university-spa
@@ -51,6 +57,6 @@ services:
       - mongo
       - mongo-seed
     links:
-      - mongo
+      - api
     environment:
       WAIT_HOSTS: mongo:27017, api:3001
