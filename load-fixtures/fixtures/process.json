@@ -1,202 +1,1457 @@
 [
   {
-    "id": "1",
-    "label": "Produkcja wody butelkowanej",
-    "nodes": [
+    "id" : "267f6c9a-06f5-41d4-84d7-d5968cf64818",
+    "label" : "Produkcja piwa",
+    "nodes" : [
       {
-        "id": "node-1",
-        "label": "Rynek",
-        "type": "marketOut"
+        "id" : "267f6c9a-06f5-41d4-84d7-d5968cf94818",
+        "type" : "marketIn",
+        "process" : {
+
+        },
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 1490,
+            "y" : 310
+          }
+        },
+        "label" : "Rynek"
       },
       {
-        "id": "node-2",
-        "label": "Rynek",
-        "type": "marketIn"
+        "id" : "fe5e29ee-1890-4b7a-89a6-9efd39783b2c",
+        "type" : "marketOut",
+        "process" : {
+
+        },
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 14,
+            "y" : 274
+          }
+        },
+        "label" : "Rynek"
       },
       {
-        "id": "node-3",
-        "label": "Magazyn wody",
-        "type": "buy",
-        "inputs": [
+        "id" : "3a7139ce-01ef-4be8-af12-032be7df6759",
+        "label" : "uzdatnianie wody",
+        "inputs" : [
           {
-            "label": "woda",
-            "id": "magazyn-wody-wejscie",
-            "productId": "product-woda"
+            "id" : "1732fb0a-895a-4af6-9c06-abe8939b1a65",
+            "label" : "woda",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c",
+            "connectionsId" : [
+              "577393af-5a89-414b-9f9e-a1ddbd47f6ac"
+            ]
           }
         ],
-        "outputs": [
+        "outputs" : [
           {
-            "label": "woda",
-            "id": "magazyn-wody-wyjscie",
-            "productId": "product-woda"
-          }
-        ]
-      },
-      {
-        "id": "node-7",
-        "label": "Magazyn butelek",
-        "type": "buy",
-        "inputs": [
-          {
-            "label": "butelki",
-            "id": "magazyn-butelek-wejscie",
-            "productId": "product-butelki"
-          }
-        ],
-        "outputs": [
-          {
-            "label": "butelki",
-            "id": "magazyn-butelek-wyjscie",
-            "productId": "product-butelki"
-          }
-        ]
-      },
-      {
-        "id": "node-4",
-        "label": "Dekarbonizacja wody",
-        "type": "processStep",
-        "inputs": [
-          {
-            "label": "woda",
-            "id": "woda-dekarb-wejscie",
-            "productId": "product-woda"
-          }
-        ],
-        "outputs": [
-          {
-            "label": "woda dekarbonizowana",
-            "id": "woda-dekarb-wyjscie",
-            "productId": "product-woda-dekar"
-          }
-        ],
-        "process": {
-          "duration": "00:04",
-          "setup": "00:02",
-          "products": {
-            "product-woda-dekar": {
-              "amount": "1",
-              "requirements": [
-                {
-                  "productId": "product-woda",
-                  "amount": "2"
-                }
-              ]
-            }
-          }
-        }
-      },
-      {
-        "id": "node-5",
-        "label": "Butelkowanie wody",
-        "type": "processStep",
-        "inputs": [
-          {
-            "label": "woda dekarbonizowana",
-            "id": "butelkowanie-woda-wejscie",
-            "productId": "product-woda-dekar"
+            "id" : "65911678-55fe-4c95-8b24-c7f267f4b147",
+            "label" : "miękka",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "3ea177b6-2c39-4e4c-a249-f690f1b49849",
+            "connectionsId" : [
+              "fbd5067b-2276-41f3-bed0-f0bfe63ecfd0"
+            ]
           },
           {
-            "label": "butelki",
-            "id": "butelkowanie-butelki-wejscie",
-            "productId": "product-butelki"
+            "id" : "fce0347e-6ae5-466a-87b0-0670b4d2106c",
+            "label" : "twarda",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "c8f4a736-b9a2-48ae-a189-d00e57446c1c",
+            "connectionsId" : [
+              "c95362ae-c05d-453a-88c6-9691a08cdfb3"
+            ]
           }
         ],
-        "outputs": [
-          {
-            "label": "woda butelkowana",
-            "id": "butelkowanie-wyjscie",
-            "productId": "product-woda-butelkowana"
-          }
-        ],
-        "process": {
-          "duration": "00:02",
-          "setup": "00:02",
-          "products": {
-            "product-woda-butelkowana": {
-              "amount": "1",
-              "requirements": [
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:02",
+          "setup" : "00:03",
+          "products" : {
+            "3ea177b6-2c39-4e4c-a249-f690f1b49849" : {
+              "requirements" : [
                 {
-                  "productId": "product-woda-dekar",
-                  "amount": "1"
-                },
+                  "amount" : "1",
+                  "productId" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c"
+                }
+              ],
+              "amount" : "1"
+            },
+            "c8f4a736-b9a2-48ae-a189-d00e57446c1c" : {
+              "amount" : "1",
+              "requirements" : [
                 {
-                  "productId": "product-butelki",
-                  "amount": "1"
+                  "productId" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c",
+                  "amount" : "1"
                 }
               ]
             }
           }
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 468,
+            "y" : 176
+          }
         }
       },
       {
-        "id": "node-6",
-        "label": "Magazyn wody butelkowanej",
-        "type": "sell",
-        "inputs": [
+        "id" : "1f9a20c6-5754-4867-961d-28e668348712",
+        "label" : "zacieranie i filtracja",
+        "inputs" : [
           {
-            "label": "woda butelkowana",
-            "id": "magazyn-wody-butel-wejscie",
-            "productId": "product-woda-butelkowana"
+            "id" : "8d0a52be-293c-4468-835c-c24efe26f4a3",
+            "label" : "śruta",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "706a1f90-2c02-411d-8c65-612fd5435a5f",
+            "connectionsId" : [
+              "e9488d6c-fc16-450d-9ebb-77105f0d71ce"
+            ]
+          },
+          {
+            "id" : "45126845-4748-4fab-bfbf-9d9c92ffad48",
+            "label" : "woda miękka",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "3ea177b6-2c39-4e4c-a249-f690f1b49849",
+            "connectionsId" : [
+              "fbd5067b-2276-41f3-bed0-f0bfe63ecfd0"
+            ]
           }
         ],
-        "outputs": [
+        "outputs" : [
           {
-            "label": "woda butelkowana",
-            "id": "magazyn-wody-butel-wyjscie",
-            "productId": "product-woda-butelkowana"
+            "id" : "5f71f445-e817-421c-ab7d-8920e1a221e2",
+            "label" : "brzeczka",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "47743452-d09f-4257-a84f-e832ffd0dceb",
+            "connectionsId" : [
+              "c4337ff7-d1d4-4e5b-af90-8a692df76cf8"
+            ]
           }
-        ]
+        ],
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:04",
+          "setup" : "00:02",
+          "products" : {
+            "47743452-d09f-4257-a84f-e832ffd0dceb" : {
+              "amount" : "1",
+              "requirements" : [
+                {
+                  "productId" : "706a1f90-2c02-411d-8c65-612fd5435a5f",
+                  "amount" : "1"
+                },
+                {
+                  "productId" : "3ea177b6-2c39-4e4c-a249-f690f1b49849",
+                  "amount" : "1"
+                }
+              ]
+            }
+          }
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 720,
+            "y" : 23
+          }
+        }
+      },
+      {
+        "id" : "3073d258-881e-48ea-9877-efd5d0f372f8",
+        "label" : "śrutowanie słodu",
+        "inputs" : [
+          {
+            "id" : "290f2ea5-8c81-4e90-ad57-10ad865ff556",
+            "label" : "słód",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+            "connectionsId" : [
+              "6dc4e8ec-79bf-4d5f-b2fa-c808bda64904"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "21b9f4ba-303d-42c1-aa1a-ccb3cc68e37c",
+            "label" : "śruta",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "706a1f90-2c02-411d-8c65-612fd5435a5f",
+            "connectionsId" : [
+              "e9488d6c-fc16-450d-9ebb-77105f0d71ce"
+            ]
+          }
+        ],
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:02",
+          "setup" : "00:02",
+          "products" : {
+            "706a1f90-2c02-411d-8c65-612fd5435a5f" : {
+              "requirements" : [
+                {
+                  "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 474,
+            "y" : 41
+          }
+        }
+      },
+      {
+        "id" : "80bfd18b-7335-45ed-96a6-173cb5dd5699",
+        "label" : "gotowanie brzeczki",
+        "inputs" : [
+          {
+            "id" : "cf0c258c-9ed8-4457-8c1e-2b8e9d0d097e",
+            "label" : "brzeczka",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "47743452-d09f-4257-a84f-e832ffd0dceb",
+            "connectionsId" : [
+              "c4337ff7-d1d4-4e5b-af90-8a692df76cf8"
+            ]
+          },
+          {
+            "id" : "459b3b8b-7c4e-4b82-9c4b-a1a19c992dce",
+            "label" : "chmiel",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "9935488c-dfa6-4c20-914c-e9418b4c409f",
+            "connectionsId" : [
+              "7dddeea7-443c-4dc2-aaac-e1e4c4e65120"
+            ]
+          },
+          {
+            "id" : "04c4968e-51f6-46eb-8c7f-1da7c2c53a47",
+            "label" : "woda twarda",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "c8f4a736-b9a2-48ae-a189-d00e57446c1c",
+            "connectionsId" : [
+              "c95362ae-c05d-453a-88c6-9691a08cdfb3"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "8b68b96f-bb86-4d29-934e-434593fc8a5a",
+            "label" : "ekstrakt",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "3defc8d8-4b8a-49b1-99c4-941a4ba4e80c",
+            "connectionsId" : [
+              "753b352d-598e-4493-ab1c-31f42e8a28da"
+            ]
+          }
+        ],
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:05",
+          "setup" : "00:05",
+          "products" : {
+            "3defc8d8-4b8a-49b1-99c4-941a4ba4e80c" : {
+              "requirements" : [
+                {
+                  "productId" : "47743452-d09f-4257-a84f-e832ffd0dceb",
+                  "amount" : "1"
+                },
+                {
+                  "productId" : "9935488c-dfa6-4c20-914c-e9418b4c409f",
+                  "amount" : "1"
+                },
+                {
+                  "productId" : "c8f4a736-b9a2-48ae-a189-d00e57446c1c",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 1022,
+            "y" : 57
+          }
+        }
+      },
+      {
+        "id" : "94e83858-22a0-454c-8f84-ded8ea42bd50",
+        "label" : "fermentacja i leżakowanie",
+        "inputs" : [
+          {
+            "id" : "7d08d864-43e6-4944-898d-c47638371672",
+            "label" : "ekstrakt",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "3defc8d8-4b8a-49b1-99c4-941a4ba4e80c",
+            "connectionsId" : [
+              "753b352d-598e-4493-ab1c-31f42e8a28da"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "43d33aa8-f9e4-4d42-9c60-1748d9de2b53",
+            "label" : "niefiltrowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "87231b49-98b7-49d4-a88c-937a13935146",
+            "connectionsId" : [
+              "97437999-ab4d-4ad5-8700-d1876915d91f"
+            ]
+          }
+        ],
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:04",
+          "setup" : "00:01",
+          "products" : {
+            "87231b49-98b7-49d4-a88c-937a13935146" : {
+              "requirements" : [
+                {
+                  "productId" : "3defc8d8-4b8a-49b1-99c4-941a4ba4e80c",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 827,
+            "y" : 241
+          }
+        }
+      },
+      {
+        "id" : "df273031-c6c9-480b-85b1-0622da84c8c6",
+        "label" : "filtracja",
+        "inputs" : [
+          {
+            "id" : "2ae6d61f-2061-4726-8d49-2540aeb74a34",
+            "label" : "niefiltorwane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "87231b49-98b7-49d4-a88c-937a13935146",
+            "connectionsId" : [
+              "97437999-ab4d-4ad5-8700-d1876915d91f"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "105745fa-b2b5-42fe-9e01-38071223ecd8",
+            "label" : "filtrowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "20cac2c8-15a4-46c9-a0ed-f208e01c16ec",
+            "connectionsId" : [
+              "23b4b095-3577-4ac3-997e-03f155bb5f55"
+            ]
+          }
+        ],
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:02",
+          "setup" : "00:04",
+          "products" : {
+            "20cac2c8-15a4-46c9-a0ed-f208e01c16ec" : {
+              "requirements" : [
+                {
+                  "productId" : "87231b49-98b7-49d4-a88c-937a13935146",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 837,
+            "y" : 373
+          }
+        }
+      },
+      {
+        "id" : "140ccbb3-d428-4d61-8a9e-7ba3121b6596",
+        "label" : "butelkowanie",
+        "inputs" : [
+          {
+            "id" : "8f5b6a4f-1679-40d8-88c4-62d5fc41780c",
+            "label" : "filtrowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "20cac2c8-15a4-46c9-a0ed-f208e01c16ec",
+            "connectionsId" : [
+              "23b4b095-3577-4ac3-997e-03f155bb5f55"
+            ]
+          },
+          {
+            "id" : "34e33591-b2ef-4320-a12e-12dec16ebb3c",
+            "label" : "butelki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "231816c3-675e-4870-93c0-65c33234ba24",
+            "connectionsId" : [
+              "8085b699-0c3e-426b-8600-4adbfd6537c6"
+            ]
+          },
+          {
+            "id" : "23af9224-7fd5-4bfe-b937-423fd8e7058a",
+            "label" : "beczki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "34237593-0aab-45cd-83e8-32fb2fdbe196",
+            "connectionsId" : [
+              "96eea09a-682c-4964-8d4c-29ad654af047"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "99a27b6b-31e1-44b8-b7bf-ec968f274ce5",
+            "label" : "piwo butelkowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "96c3cce6-08d1-4e45-af91-05a33eacdbc7",
+            "connectionsId" : [
+              "26be9efb-20af-437a-ad4d-6068d6f2b075"
+            ]
+          },
+          {
+            "id" : "d6570839-8286-49f9-aacd-c96c0018485c",
+            "label" : "piwo beczkowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "9dd409d8-5805-4e84-9912-3e140d71858e",
+            "connectionsId" : [
+              "caa434eb-db00-4277-a908-ff9836f82246"
+            ]
+          }
+        ],
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:04",
+          "setup" : "00:05",
+          "products" : {
+            "96c3cce6-08d1-4e45-af91-05a33eacdbc7" : {
+              "requirements" : [
+                {
+                  "productId" : "20cac2c8-15a4-46c9-a0ed-f208e01c16ec",
+                  "amount" : "1"
+                },
+                {
+                  "productId" : "231816c3-675e-4870-93c0-65c33234ba24",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            },
+            "9dd409d8-5805-4e84-9912-3e140d71858e" : {
+              "requirements" : [
+                {
+                  "productId" : "20cac2c8-15a4-46c9-a0ed-f208e01c16ec",
+                  "amount" : "2"
+                },
+                {
+                  "productId" : "34237593-0aab-45cd-83e8-32fb2fdbe196",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 823,
+            "y" : 511
+          }
+        }
+      },
+      {
+        "id" : "244d2809-e488-49c0-ad0c-065a89a59f13",
+        "label" : "Magazyn piwa beczk.",
+        "inputs" : [
+          {
+            "id" : "ed43efde-dec7-448f-8890-da472b4dcde2",
+            "label" : "beczkowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "9dd409d8-5805-4e84-9912-3e140d71858e",
+            "connectionsId" : [
+              "caa434eb-db00-4277-a908-ff9836f82246"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "72620751-37b2-45b5-8bcc-7a5eca56cffc",
+            "label" : "beczkowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "9dd409d8-5805-4e84-9912-3e140d71858e",
+            "connectionsId" : [
+              "52021ac8-1d9b-4a64-80d1-8e9977363f66"
+            ]
+          }
+        ],
+        "type" : "sell",
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 1124,
+            "y" : 481
+          }
+        }
+      },
+      {
+        "id" : "d9587d90-b5cd-4b23-9fb8-b2ee2c97c5e2",
+        "label" : "magazyn piwa but.",
+        "inputs" : [
+          {
+            "id" : "11df32d1-1671-4690-b711-9294a9060a7f",
+            "label" : "butelkowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "96c3cce6-08d1-4e45-af91-05a33eacdbc7",
+            "connectionsId" : [
+              "26be9efb-20af-437a-ad4d-6068d6f2b075"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "325dace6-8f92-462a-b6f4-f1bf634cfc50",
+            "label" : "butelkowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "96c3cce6-08d1-4e45-af91-05a33eacdbc7",
+            "connectionsId" : [
+              "371e6ec4-0de7-4f9c-8878-6cc76da44fd0"
+            ]
+          }
+        ],
+        "type" : "sell",
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 1164,
+            "y" : 313
+          }
+        }
+      },
+      {
+        "id" : "cec1e899-68a6-4d43-9bca-d793c61a4f39",
+        "label" : "Magazyn słodu",
+        "inputs" : [
+          {
+            "id" : "2f4b7ad4-f019-4261-a210-768a9349a429",
+            "label" : "słód",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+            "connectionsId" : [
+              "543ad7b0-2324-409b-b6ac-8b9daa21536e"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "e3e93d93-02a0-427a-a722-acc2c0b551ca",
+            "label" : "słód",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+            "connectionsId" : [
+              "6dc4e8ec-79bf-4d5f-b2fa-c808bda64904"
+            ]
+          }
+        ],
+        "type" : "buy",
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 231,
+            "y" : 34
+          }
+        }
+      },
+      {
+        "id" : "e1950e10-2639-4cb6-87ad-0fbfd8a18314",
+        "label" : "magazyn wody",
+        "inputs" : [
+          {
+            "id" : "218bb3dc-8070-4c76-8d10-8e32c9091543",
+            "label" : "woda",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c",
+            "connectionsId" : [
+              "92ca5ac2-abee-4247-ba3e-f0a0936cded6"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "530a7983-3470-4dab-91c1-7bf88259f9b1",
+            "label" : "woda",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c",
+            "connectionsId" : [
+              "577393af-5a89-414b-9f9e-a1ddbd47f6ac"
+            ]
+          }
+        ],
+        "type" : "buy",
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 220,
+            "y" : 198
+          }
+        }
+      },
+      {
+        "id" : "e5a038cc-6b43-4ed3-9e39-8d9f6629a474",
+        "label" : "Magazyn chmielu",
+        "inputs" : [
+          {
+            "id" : "aeaad46d-f9dc-4666-b277-cd9b29fbfbcf",
+            "label" : "chmiel",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "9935488c-dfa6-4c20-914c-e9418b4c409f",
+            "connectionsId" : [
+              "08aea467-7630-45a9-83b8-f177673a0f7f"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "321c693c-d349-4913-8cd4-f61bf2512280",
+            "label" : "chmiel",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "9935488c-dfa6-4c20-914c-e9418b4c409f",
+            "connectionsId" : [
+              "7dddeea7-443c-4dc2-aaac-e1e4c4e65120"
+            ]
+          }
+        ],
+        "type" : "buy",
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 223,
+            "y" : 353
+          }
+        }
+      },
+      {
+        "id" : "71f94360-2a94-4e8f-ba19-f656553da2db",
+        "label" : "Magazyn beczek",
+        "inputs" : [
+          {
+            "id" : "dd9206fb-6339-4d43-a9d4-01f431f7bba7",
+            "label" : "beczki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "34237593-0aab-45cd-83e8-32fb2fdbe196",
+            "connectionsId" : [
+              "c8086917-cd6a-4c28-86cd-56a12cbe1e72"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "fa6ce981-329b-453c-a8a7-44d3c4f959e0",
+            "label" : "beczki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "34237593-0aab-45cd-83e8-32fb2fdbe196",
+            "connectionsId" : [
+              "96eea09a-682c-4964-8d4c-29ad654af047"
+            ]
+          }
+        ],
+        "type" : "buy",
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 229,
+            "y" : 647
+          }
+        }
+      },
+      {
+        "id" : "8ebd67c2-0b20-4a6f-8b65-aece25d249c9",
+        "label" : "Magazyn butelek",
+        "inputs" : [
+          {
+            "id" : "8dea4175-9358-42a2-bfb3-a2ca152483f9",
+            "label" : "butelki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "231816c3-675e-4870-93c0-65c33234ba24",
+            "connectionsId" : [
+              "ee033afe-ad39-44fd-95d0-32c637e0eeb3"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "113de37d-46b3-4dd0-a439-e2136eb56559",
+            "label" : "butelki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "231816c3-675e-4870-93c0-65c33234ba24",
+            "connectionsId" : [
+              "8085b699-0c3e-426b-8600-4adbfd6537c6"
+            ]
+          }
+        ],
+        "type" : "buy",
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 227,
+            "y" : 499
+          }
+        }
       }
     ],
-    "connections": {
-      "connection-1": {
-        "start": "product-woda",
-        "end": "magazyn-wody-wejscie",
-        "startNode": "node-1",
-        "endNode": "node-3",
-        "productId": "product-woda"
+    "connections" : {
+      "fbd5067b-2276-41f3-bed0-f0bfe63ecfd0" : {
+        "start" : "65911678-55fe-4c95-8b24-c7f267f4b147",
+        "startNode" : "3a7139ce-01ef-4be8-af12-032be7df6759",
+        "productId" : "3ea177b6-2c39-4e4c-a249-f690f1b49849",
+        "end" : "45126845-4748-4fab-bfbf-9d9c92ffad48",
+        "endNode" : "1f9a20c6-5754-4867-961d-28e668348712"
       },
-      "connection-2": {
-        "start": "magazyn-wody-wyjscie",
-        "end": "woda-dekarb-wejscie",
-        "startNode": "node-3",
-        "endNode": "node-4",
-        "productId": "product-woda"
+      "e9488d6c-fc16-450d-9ebb-77105f0d71ce" : {
+        "start" : "21b9f4ba-303d-42c1-aa1a-ccb3cc68e37c",
+        "startNode" : "3073d258-881e-48ea-9877-efd5d0f372f8",
+        "productId" : "706a1f90-2c02-411d-8c65-612fd5435a5f",
+        "end" : "8d0a52be-293c-4468-835c-c24efe26f4a3",
+        "endNode" : "1f9a20c6-5754-4867-961d-28e668348712"
       },
-      "connection-3": {
-        "start": "woda-dekarb-wyjscie",
-        "end": "butelkowanie-woda-wejscie",
-        "startNode": "node-4",
-        "endNode": "node-5",
-        "productId": "product-woda-dekar"
+      "c4337ff7-d1d4-4e5b-af90-8a692df76cf8" : {
+        "start" : "5f71f445-e817-421c-ab7d-8920e1a221e2",
+        "startNode" : "1f9a20c6-5754-4867-961d-28e668348712",
+        "productId" : "47743452-d09f-4257-a84f-e832ffd0dceb",
+        "end" : "cf0c258c-9ed8-4457-8c1e-2b8e9d0d097e",
+        "endNode" : "80bfd18b-7335-45ed-96a6-173cb5dd5699"
       },
-      "connection-4": {
-        "start": "butelkowanie-wyjscie",
-        "end": "magazyn-wody-butel-wejscie",
-        "startNode": "node-5",
-        "endNode": "node-6",
-        "productId": "product-woda-butelkowana"
+      "c95362ae-c05d-453a-88c6-9691a08cdfb3" : {
+        "start" : "fce0347e-6ae5-466a-87b0-0670b4d2106c",
+        "startNode" : "3a7139ce-01ef-4be8-af12-032be7df6759",
+        "productId" : "c8f4a736-b9a2-48ae-a189-d00e57446c1c",
+        "end" : "04c4968e-51f6-46eb-8c7f-1da7c2c53a47",
+        "endNode" : "80bfd18b-7335-45ed-96a6-173cb5dd5699"
       },
-      "connection-5": {
-        "start": "magazyn-wody-butel-wyjscie",
-        "end": "product-woda-butelkowana",
-        "startNode": "node-6",
-        "endNode": "node-2",
-        "productId": "product-woda-butelkowana"
+      "753b352d-598e-4493-ab1c-31f42e8a28da" : {
+        "start" : "8b68b96f-bb86-4d29-934e-434593fc8a5a",
+        "startNode" : "80bfd18b-7335-45ed-96a6-173cb5dd5699",
+        "productId" : "3defc8d8-4b8a-49b1-99c4-941a4ba4e80c",
+        "end" : "7d08d864-43e6-4944-898d-c47638371672",
+        "endNode" : "94e83858-22a0-454c-8f84-ded8ea42bd50"
       },
-      "connection-6": {
-        "start": "product-butelki",
-        "end": "magazyn-butelek-wejscie",
-        "startNode": "node-1",
-        "endNode": "node-7",
-        "productId": "product-butelki"
+      "97437999-ab4d-4ad5-8700-d1876915d91f" : {
+        "start" : "43d33aa8-f9e4-4d42-9c60-1748d9de2b53",
+        "startNode" : "94e83858-22a0-454c-8f84-ded8ea42bd50",
+        "productId" : "87231b49-98b7-49d4-a88c-937a13935146",
+        "end" : "2ae6d61f-2061-4726-8d49-2540aeb74a34",
+        "endNode" : "df273031-c6c9-480b-85b1-0622da84c8c6"
       },
-      "connection-7": {
-        "start": "magazyn-butelek-wyjscie",
-        "end": "butelkowanie-butelki-wejscie",
-        "startNode": "node-7",
-        "endNode": "node-5",
-        "productId": "product-butelki"
+      "23b4b095-3577-4ac3-997e-03f155bb5f55" : {
+        "start" : "105745fa-b2b5-42fe-9e01-38071223ecd8",
+        "startNode" : "df273031-c6c9-480b-85b1-0622da84c8c6",
+        "productId" : "20cac2c8-15a4-46c9-a0ed-f208e01c16ec",
+        "end" : "8f5b6a4f-1679-40d8-88c4-62d5fc41780c",
+        "endNode" : "140ccbb3-d428-4d61-8a9e-7ba3121b6596"
+      },
+      "26be9efb-20af-437a-ad4d-6068d6f2b075" : {
+        "start" : "99a27b6b-31e1-44b8-b7bf-ec968f274ce5",
+        "startNode" : "140ccbb3-d428-4d61-8a9e-7ba3121b6596",
+        "productId" : "96c3cce6-08d1-4e45-af91-05a33eacdbc7",
+        "end" : "11df32d1-1671-4690-b711-9294a9060a7f",
+        "endNode" : "d9587d90-b5cd-4b23-9fb8-b2ee2c97c5e2"
+      },
+      "caa434eb-db00-4277-a908-ff9836f82246" : {
+        "start" : "d6570839-8286-49f9-aacd-c96c0018485c",
+        "startNode" : "140ccbb3-d428-4d61-8a9e-7ba3121b6596",
+        "productId" : "9dd409d8-5805-4e84-9912-3e140d71858e",
+        "end" : "ed43efde-dec7-448f-8890-da472b4dcde2",
+        "endNode" : "244d2809-e488-49c0-ad0c-065a89a59f13"
+      },
+      "371e6ec4-0de7-4f9c-8878-6cc76da44fd0" : {
+        "start" : "325dace6-8f92-462a-b6f4-f1bf634cfc50",
+        "startNode" : "d9587d90-b5cd-4b23-9fb8-b2ee2c97c5e2",
+        "productId" : "96c3cce6-08d1-4e45-af91-05a33eacdbc7",
+        "end" : "96c3cce6-08d1-4e45-af91-05a33eacdbc7",
+        "endNode" : "267f6c9a-06f5-41d4-84d7-d5968cf94818"
+      },
+      "52021ac8-1d9b-4a64-80d1-8e9977363f66" : {
+        "start" : "72620751-37b2-45b5-8bcc-7a5eca56cffc",
+        "startNode" : "244d2809-e488-49c0-ad0c-065a89a59f13",
+        "productId" : "9dd409d8-5805-4e84-9912-3e140d71858e",
+        "end" : "9dd409d8-5805-4e84-9912-3e140d71858e",
+        "endNode" : "267f6c9a-06f5-41d4-84d7-d5968cf94818"
+      },
+      "543ad7b0-2324-409b-b6ac-8b9daa21536e" : {
+        "start" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+        "startNode" : "fe5e29ee-1890-4b7a-89a6-9efd39783b2c",
+        "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+        "end" : "2f4b7ad4-f019-4261-a210-768a9349a429",
+        "endNode" : "cec1e899-68a6-4d43-9bca-d793c61a4f39"
+      },
+      "6dc4e8ec-79bf-4d5f-b2fa-c808bda64904" : {
+        "start" : "e3e93d93-02a0-427a-a722-acc2c0b551ca",
+        "startNode" : "cec1e899-68a6-4d43-9bca-d793c61a4f39",
+        "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+        "end" : "290f2ea5-8c81-4e90-ad57-10ad865ff556",
+        "endNode" : "3073d258-881e-48ea-9877-efd5d0f372f8"
+      },
+      "08aea467-7630-45a9-83b8-f177673a0f7f" : {
+        "start" : "9935488c-dfa6-4c20-914c-e9418b4c409f",
+        "startNode" : "fe5e29ee-1890-4b7a-89a6-9efd39783b2c",
+        "productId" : "9935488c-dfa6-4c20-914c-e9418b4c409f",
+        "end" : "aeaad46d-f9dc-4666-b277-cd9b29fbfbcf",
+        "endNode" : "e5a038cc-6b43-4ed3-9e39-8d9f6629a474"
+      },
+      "7dddeea7-443c-4dc2-aaac-e1e4c4e65120" : {
+        "start" : "321c693c-d349-4913-8cd4-f61bf2512280",
+        "startNode" : "e5a038cc-6b43-4ed3-9e39-8d9f6629a474",
+        "productId" : "9935488c-dfa6-4c20-914c-e9418b4c409f",
+        "end" : "459b3b8b-7c4e-4b82-9c4b-a1a19c992dce",
+        "endNode" : "80bfd18b-7335-45ed-96a6-173cb5dd5699"
+      },
+      "ee033afe-ad39-44fd-95d0-32c637e0eeb3" : {
+        "start" : "231816c3-675e-4870-93c0-65c33234ba24",
+        "startNode" : "fe5e29ee-1890-4b7a-89a6-9efd39783b2c",
+        "productId" : "231816c3-675e-4870-93c0-65c33234ba24",
+        "end" : "8dea4175-9358-42a2-bfb3-a2ca152483f9",
+        "endNode" : "8ebd67c2-0b20-4a6f-8b65-aece25d249c9"
+      },
+      "8085b699-0c3e-426b-8600-4adbfd6537c6" : {
+        "start" : "113de37d-46b3-4dd0-a439-e2136eb56559",
+        "startNode" : "8ebd67c2-0b20-4a6f-8b65-aece25d249c9",
+        "productId" : "231816c3-675e-4870-93c0-65c33234ba24",
+        "end" : "34e33591-b2ef-4320-a12e-12dec16ebb3c",
+        "endNode" : "140ccbb3-d428-4d61-8a9e-7ba3121b6596"
+      },
+      "c8086917-cd6a-4c28-86cd-56a12cbe1e72" : {
+        "start" : "34237593-0aab-45cd-83e8-32fb2fdbe196",
+        "startNode" : "fe5e29ee-1890-4b7a-89a6-9efd39783b2c",
+        "productId" : "34237593-0aab-45cd-83e8-32fb2fdbe196",
+        "end" : "dd9206fb-6339-4d43-a9d4-01f431f7bba7",
+        "endNode" : "71f94360-2a94-4e8f-ba19-f656553da2db"
+      },
+      "96eea09a-682c-4964-8d4c-29ad654af047" : {
+        "start" : "fa6ce981-329b-453c-a8a7-44d3c4f959e0",
+        "startNode" : "71f94360-2a94-4e8f-ba19-f656553da2db",
+        "productId" : "34237593-0aab-45cd-83e8-32fb2fdbe196",
+        "end" : "23af9224-7fd5-4bfe-b937-423fd8e7058a",
+        "endNode" : "140ccbb3-d428-4d61-8a9e-7ba3121b6596"
+      },
+      "92ca5ac2-abee-4247-ba3e-f0a0936cded6" : {
+        "start" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c",
+        "startNode" : "fe5e29ee-1890-4b7a-89a6-9efd39783b2c",
+        "productId" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c",
+        "end" : "218bb3dc-8070-4c76-8d10-8e32c9091543",
+        "endNode" : "e1950e10-2639-4cb6-87ad-0fbfd8a18314"
+      },
+      "577393af-5a89-414b-9f9e-a1ddbd47f6ac" : {
+        "start" : "530a7983-3470-4dab-91c1-7bf88259f9b1",
+        "startNode" : "e1950e10-2639-4cb6-87ad-0fbfd8a18314",
+        "productId" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c",
+        "end" : "1732fb0a-895a-4af6-9c06-abe8939b1a65",
+        "endNode" : "3a7139ce-01ef-4be8-af12-032be7df6759"
+      }
+    }
+  },
+  {
+    "id" : "026526a6-f44b-4c28-be30-e2797592bed7",
+    "label" : "Produkcja słodu",
+    "nodes" : [
+      {
+        "id" : "506150d9-8e84-473e-9983-6f5232c8fb07",
+        "label" : "Rynek",
+        "type" : "marketOut",
+        "process" : {
+
+        },
+        "inputs" : [ ],
+        "outputs" : [
+          [ ],
+          [ ],
+          [ ],
+          [ ],
+          [ ],
+          [ ],
+          [ ],
+          [ ]
+        ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 11,
+            "y" : 14
+          }
+        }
+      },
+      {
+        "id" : "2d57e5ba-3e23-424b-acff-059071884175",
+        "label" : "czyszczenie ziarna",
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:03",
+          "setup" : "00:02",
+          "products" : {
+            "78c77fa5-47ab-42c4-944f-aa8da6787108" : {
+              "requirements" : [
+                {
+                  "productId" : "e14ae07b-75b1-47e8-bea2-a1785634dc13",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "inputs" : [
+          {
+            "id" : "14437ebe-9588-4049-8b3f-098fccdb9206",
+            "label" : "pszenica",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "e14ae07b-75b1-47e8-bea2-a1785634dc13",
+            "connectionsId" : [
+              "f622d6ab-c84d-4d86-a0e7-f1cfad856d35"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "29e6435d-9f78-49f1-95da-2f709d0876ef",
+            "label" : "oczyszczona pszenica",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "78c77fa5-47ab-42c4-944f-aa8da6787108",
+            "connectionsId" : [
+              "6a0fb4b6-ffb4-447b-80b9-54b55c7ea036"
+            ]
+          }
+        ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 485,
+            "y" : 60
+          }
+        }
+      },
+      {
+        "id" : "d6df6b46-e12f-4510-af08-92b9db041b22",
+        "label" : "Magazyn pszenicy",
+        "type" : "buy",
+        "inputs" : [
+          {
+            "id" : "0060c353-0abe-4168-b180-541119879e54",
+            "label" : "pszenica",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "e14ae07b-75b1-47e8-bea2-a1785634dc13",
+            "connectionsId" : [
+              "c979a542-c4b3-4d96-8466-ec756831cbf3"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "a6f60a01-70c2-4f80-a6e5-06fb436bb2bd",
+            "label" : "pszenica",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "e14ae07b-75b1-47e8-bea2-a1785634dc13",
+            "connectionsId" : [
+              "f622d6ab-c84d-4d86-a0e7-f1cfad856d35"
+            ]
+          }
+        ],
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 215,
+            "y" : 47
+          }
+        }
+      },
+      {
+        "id" : "942f2011-3625-4b60-be4e-a00fe37e4517",
+        "label" : "sortowanie ziarna",
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:04",
+          "setup" : "00:03",
+          "products" : {
+            "b6dbbd20-a86e-4a20-b6cf-a4c6742b8832" : {
+              "requirements" : [
+                {
+                  "productId" : "78c77fa5-47ab-42c4-944f-aa8da6787108",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "inputs" : [
+          {
+            "id" : "de39bfe7-84f9-4a7b-aa4d-710442135484",
+            "label" : "pszenica",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "78c77fa5-47ab-42c4-944f-aa8da6787108",
+            "connectionsId" : [
+              "6a0fb4b6-ffb4-447b-80b9-54b55c7ea036"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "81dfbc0d-09c3-40a7-a0f5-15457ddb6e49",
+            "label" : "posortowane",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "b6dbbd20-a86e-4a20-b6cf-a4c6742b8832",
+            "connectionsId" : [
+              "23902a27-86cb-41ad-b81d-79d9716da554"
+            ]
+          }
+        ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 773,
+            "y" : 56
+          }
+        }
+      },
+      {
+        "id" : "621566a2-7c12-480f-8b65-76fa4d78ab8b",
+        "label" : "moczenie",
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:03",
+          "setup" : "00:05",
+          "products" : {
+            "6560b8e6-daa2-4a56-9591-87a539521a28" : {
+              "requirements" : [
+                {
+                  "productId" : "b6dbbd20-a86e-4a20-b6cf-a4c6742b8832",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "inputs" : [
+          {
+            "id" : "610012d9-a397-4568-b2b9-d08cb0ecfdb3",
+            "label" : "pszenica",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "b6dbbd20-a86e-4a20-b6cf-a4c6742b8832",
+            "connectionsId" : [
+              "23902a27-86cb-41ad-b81d-79d9716da554"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "882bf0f4-941b-4cc2-83d0-47bba76ac3d6",
+            "label" : "mokra pszenica",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "6560b8e6-daa2-4a56-9591-87a539521a28",
+            "connectionsId" : [
+              "37944b53-c9c8-4cb3-9048-d3d110ff51d3"
+            ]
+          }
+        ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 1017,
+            "y" : 62
+          }
+        }
+      },
+      {
+        "id" : "7d6255e3-cbe1-4fb4-8224-0a100e4cc2dd",
+        "label" : "kiełkowanie",
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:03",
+          "setup" : "00:05",
+          "products" : {
+            "13c8f5eb-01cd-4bc7-abff-91d76949e235" : {
+              "requirements" : [
+                {
+                  "productId" : "6560b8e6-daa2-4a56-9591-87a539521a28",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "inputs" : [
+          {
+            "id" : "f6674947-4bb8-4892-a368-d0eb97ed0c42",
+            "label" : "pszenica",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "6560b8e6-daa2-4a56-9591-87a539521a28",
+            "connectionsId" : [
+              "37944b53-c9c8-4cb3-9048-d3d110ff51d3"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "1369853c-a6ad-470f-b2f9-40f04f6a3cd2",
+            "label" : "kielki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "13c8f5eb-01cd-4bc7-abff-91d76949e235",
+            "connectionsId" : [
+              "02093cf9-d704-4fab-9598-e8cad67c11e5"
+            ]
+          }
+        ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 276,
+            "y" : 228
+          }
+        }
+      },
+      {
+        "id" : "8c5542b4-8ba1-40a9-9afd-20dd51407335",
+        "label" : "suszenie",
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:02",
+          "setup" : "00:03",
+          "products" : {
+            "f5fe04b0-7678-4e2b-9bfe-80a912ef4597" : {
+              "requirements" : [
+                {
+                  "productId" : "13c8f5eb-01cd-4bc7-abff-91d76949e235",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "2"
+            }
+          }
+        },
+        "inputs" : [
+          {
+            "id" : "dc9fc17e-ed89-425e-9bc4-aee10607a1c9",
+            "label" : "kiełki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "13c8f5eb-01cd-4bc7-abff-91d76949e235",
+            "connectionsId" : [
+              "02093cf9-d704-4fab-9598-e8cad67c11e5"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "9a00f208-384d-45af-b382-71bb967f165c",
+            "label" : "suszone kiełki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f5fe04b0-7678-4e2b-9bfe-80a912ef4597",
+            "connectionsId" : [
+              "5927e1a0-2ebc-4c73-9479-33829a906656"
+            ]
+          }
+        ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 506,
+            "y" : 228
+          }
+        }
+      },
+      {
+        "id" : "eea1bb39-af4c-4a7a-b98c-33c632a93ccb",
+        "label" : "oddzielanie korzonków",
+        "type" : "processStep",
+        "process" : {
+          "products" : {
+            "f7750b1d-9778-4f7c-85c7-ddab1ce59c60" : {
+              "requirements" : [
+                {
+                  "productId" : "f5fe04b0-7678-4e2b-9bfe-80a912ef4597",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          },
+          "duration" : "00:02",
+          "setup" : "00:03"
+        },
+        "inputs" : [
+          {
+            "id" : "368efd8d-8d57-4c64-a8c0-4f65637e47df",
+            "label" : "kiełki",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f5fe04b0-7678-4e2b-9bfe-80a912ef4597",
+            "connectionsId" : [
+              "5927e1a0-2ebc-4c73-9479-33829a906656"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "76e361bf-5166-410e-bfab-e418dfd4cb64",
+            "label" : "słód",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+            "connectionsId" : [
+              "f067f1ec-f3f6-4d7f-8c12-eef221b91c13"
+            ]
+          }
+        ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 750,
+            "y" : 230
+          }
+        }
+      },
+      {
+        "id" : "4ff955d5-e68e-46e2-8b16-f1a3902289f9",
+        "label" : "Dojrzewanie slodu",
+        "type" : "processStep",
+        "process" : {
+          "duration" : "00:03",
+          "setup" : "00:04",
+          "products" : {
+            "f7750b1d-9778-4f7c-85c7-ddab1ce59c60" : {
+              "requirements" : [
+                {
+                  "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+                  "amount" : "1"
+                }
+              ],
+              "amount" : "1"
+            }
+          }
+        },
+        "inputs" : [
+          {
+            "id" : "5950d873-13bf-4c0f-a195-d8e4f25cb361",
+            "label" : "słód",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+            "connectionsId" : [
+              "f067f1ec-f3f6-4d7f-8c12-eef221b91c13"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "776c49c4-abe7-4ee5-becd-7193ace64439",
+            "label" : "słód",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+            "connectionsId" : [
+              "5d3dd91d-75b4-4e1b-bae9-fb12fc4e31ca"
+            ]
+          }
+        ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 1006,
+            "y" : 224
+          }
+        }
+      },
+      {
+        "id" : "169d1828-cb1f-4f3c-9c02-4ef7830eab51",
+        "label" : "Magazyn słodu",
+        "type" : "sell",
+        "inputs" : [
+          {
+            "id" : "14516dc3-1dc9-4848-acdd-aa3d2382bce9",
+            "label" : "słód",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+            "connectionsId" : [
+              "5d3dd91d-75b4-4e1b-bae9-fb12fc4e31ca"
+            ]
+          }
+        ],
+        "outputs" : [
+          {
+            "id" : "17169829-65d1-4d47-9f7e-1c708e453aab",
+            "label" : "słód",
+            "maxConnections" : 1,
+            "connections" : 1,
+            "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+            "connectionsId" : [
+              "76f0580e-4437-46ff-b44d-4723f7f321f6"
+            ]
+          }
+        ],
+        "process" : {
+
+        },
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 1223,
+            "y" : 189
+          }
+        }
+      },
+      {
+        "id" : "5ef58d40-f939-4bca-ad97-cc8b05233de6",
+        "label" : "Rynek",
+        "type" : "marketIn",
+        "process" : {
+
+        },
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "draggableProps" : {
+          "defaultPosition" : {
+            "x" : 1466,
+            "y" : 156
+          }
+        }
+      }
+    ],
+    "connections" : {
+      "c979a542-c4b3-4d96-8466-ec756831cbf3" : {
+        "start" : "e14ae07b-75b1-47e8-bea2-a1785634dc13",
+        "startNode" : "506150d9-8e84-473e-9983-6f5232c8fb07",
+        "productId" : "e14ae07b-75b1-47e8-bea2-a1785634dc13",
+        "end" : "0060c353-0abe-4168-b180-541119879e54",
+        "endNode" : "d6df6b46-e12f-4510-af08-92b9db041b22"
+      },
+      "f622d6ab-c84d-4d86-a0e7-f1cfad856d35" : {
+        "start" : "a6f60a01-70c2-4f80-a6e5-06fb436bb2bd",
+        "startNode" : "d6df6b46-e12f-4510-af08-92b9db041b22",
+        "productId" : "e14ae07b-75b1-47e8-bea2-a1785634dc13",
+        "end" : "14437ebe-9588-4049-8b3f-098fccdb9206",
+        "endNode" : "2d57e5ba-3e23-424b-acff-059071884175"
+      },
+      "6a0fb4b6-ffb4-447b-80b9-54b55c7ea036" : {
+        "start" : "29e6435d-9f78-49f1-95da-2f709d0876ef",
+        "startNode" : "2d57e5ba-3e23-424b-acff-059071884175",
+        "productId" : "78c77fa5-47ab-42c4-944f-aa8da6787108",
+        "end" : "de39bfe7-84f9-4a7b-aa4d-710442135484",
+        "endNode" : "942f2011-3625-4b60-be4e-a00fe37e4517"
+      },
+      "23902a27-86cb-41ad-b81d-79d9716da554" : {
+        "start" : "81dfbc0d-09c3-40a7-a0f5-15457ddb6e49",
+        "startNode" : "942f2011-3625-4b60-be4e-a00fe37e4517",
+        "productId" : "b6dbbd20-a86e-4a20-b6cf-a4c6742b8832",
+        "end" : "610012d9-a397-4568-b2b9-d08cb0ecfdb3",
+        "endNode" : "621566a2-7c12-480f-8b65-76fa4d78ab8b"
+      },
+      "37944b53-c9c8-4cb3-9048-d3d110ff51d3" : {
+        "start" : "882bf0f4-941b-4cc2-83d0-47bba76ac3d6",
+        "startNode" : "621566a2-7c12-480f-8b65-76fa4d78ab8b",
+        "productId" : "6560b8e6-daa2-4a56-9591-87a539521a28",
+        "end" : "f6674947-4bb8-4892-a368-d0eb97ed0c42",
+        "endNode" : "7d6255e3-cbe1-4fb4-8224-0a100e4cc2dd"
+      },
+      "02093cf9-d704-4fab-9598-e8cad67c11e5" : {
+        "start" : "1369853c-a6ad-470f-b2f9-40f04f6a3cd2",
+        "startNode" : "7d6255e3-cbe1-4fb4-8224-0a100e4cc2dd",
+        "productId" : "13c8f5eb-01cd-4bc7-abff-91d76949e235",
+        "end" : "dc9fc17e-ed89-425e-9bc4-aee10607a1c9",
+        "endNode" : "8c5542b4-8ba1-40a9-9afd-20dd51407335"
+      },
+      "5927e1a0-2ebc-4c73-9479-33829a906656" : {
+        "start" : "9a00f208-384d-45af-b382-71bb967f165c",
+        "startNode" : "8c5542b4-8ba1-40a9-9afd-20dd51407335",
+        "productId" : "f5fe04b0-7678-4e2b-9bfe-80a912ef4597",
+        "end" : "368efd8d-8d57-4c64-a8c0-4f65637e47df",
+        "endNode" : "eea1bb39-af4c-4a7a-b98c-33c632a93ccb"
+      },
+      "f067f1ec-f3f6-4d7f-8c12-eef221b91c13" : {
+        "start" : "76e361bf-5166-410e-bfab-e418dfd4cb64",
+        "startNode" : "eea1bb39-af4c-4a7a-b98c-33c632a93ccb",
+        "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+        "end" : "5950d873-13bf-4c0f-a195-d8e4f25cb361",
+        "endNode" : "4ff955d5-e68e-46e2-8b16-f1a3902289f9"
+      },
+      "5d3dd91d-75b4-4e1b-bae9-fb12fc4e31ca" : {
+        "start" : "776c49c4-abe7-4ee5-becd-7193ace64439",
+        "startNode" : "4ff955d5-e68e-46e2-8b16-f1a3902289f9",
+        "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+        "end" : "14516dc3-1dc9-4848-acdd-aa3d2382bce9",
+        "endNode" : "169d1828-cb1f-4f3c-9c02-4ef7830eab51"
+      },
+      "76f0580e-4437-46ff-b44d-4723f7f321f6" : {
+        "start" : "17169829-65d1-4d47-9f7e-1c708e453aab",
+        "startNode" : "169d1828-cb1f-4f3c-9c02-4ef7830eab51",
+        "productId" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+        "end" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+        "endNode" : "5ef58d40-f939-4bca-ad97-cc8b05233de6"
       }
     }
   }

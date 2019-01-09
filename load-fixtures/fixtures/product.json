@@ -1,26 +1,128 @@
 [
   {
-    "id": "product-woda",
-    "label": "woda",
-    "amount": 100,
-    "processId": null
+    "id" : "f7750b1d-9778-4f7c-85c7-ddab1ce59c60",
+    "label" : "słód",
+    "amount" : 100,
+    "processId" : null
   },
   {
-    "id": "product-butelki",
-    "label": "butelki",
-    "amount": 100,
-    "processId": null
+    "id" : "4b18c3e5-eba7-410c-a895-82c8e6b1e43c",
+    "label" : "woda",
+    "amount" : 500,
+    "processId" : null
   },
   {
-    "id": "product-woda-butelkowana",
-    "label": "woda butelkowana",
-    "amount": 0,
-    "processId": null
+    "id" : "3ea177b6-2c39-4e4c-a249-f690f1b49849",
+    "label" : "woda - miękka",
+    "amount" : 0,
+    "processId" : "267f6c9a-06f5-41d4-84d7-d5968cf64818"
   },
   {
-    "id": "product-woda-dekar",
-    "label": "woda dekarbonizowana",
-    "amount": 0,
-    "processId": "1"
+    "id" : "c8f4a736-b9a2-48ae-a189-d00e57446c1c",
+    "label" : "woda - twarda",
+    "amount" : 0,
+    "processId" : "267f6c9a-06f5-41d4-84d7-d5968cf64818"
+  },
+  {
+    "id" : "da3da167-28f7-4712-b82c-4c809ad9e224",
+    "label" : "woda - bardzo twarda",
+    "amount" : 0,
+    "processId" : "267f6c9a-06f5-41d4-84d7-d5968cf64818"
+  },
+  {
+    "id" : "706a1f90-2c02-411d-8c65-612fd5435a5f",
+    "label" : "śruta",
+    "amount" : 0,
+    "processId" : "267f6c9a-06f5-41d4-84d7-d5968cf64818"
+  },
+  {
+    "id" : "47743452-d09f-4257-a84f-e832ffd0dceb",
+    "label" : "brzeczka",
+    "amount" : 0,
+    "processId" : "267f6c9a-06f5-41d4-84d7-d5968cf64818"
+  },
+  {
+    "id" : "3defc8d8-4b8a-49b1-99c4-941a4ba4e80c",
+    "label" : "ekstrakt",
+    "amount" : 0,
+    "processId" : "267f6c9a-06f5-41d4-84d7-d5968cf64818"
+  },
+  {
+    "id" : "87231b49-98b7-49d4-a88c-937a13935146",
+    "label" : "piwo niefiltrowane",
+    "amount" : 0,
+    "processId" : "267f6c9a-06f5-41d4-84d7-d5968cf64818"
+  },
+  {
+    "id" : "20cac2c8-15a4-46c9-a0ed-f208e01c16ec",
+    "label" : "piwo przefiltrowane",
+    "amount" : 0,
+    "processId" : "267f6c9a-06f5-41d4-84d7-d5968cf64818"
+  },
+  {
+    "id" : "96c3cce6-08d1-4e45-af91-05a33eacdbc7",
+    "label" : "piwo butelkowane",
+    "amount" : 0,
+    "processId" : null
+  },
+  {
+    "id" : "9dd409d8-5805-4e84-9912-3e140d71858e",
+    "label" : "piwo beczkowane",
+    "amount" : 0,
+    "processId" : null
+  },
+  {
+    "id" : "9935488c-dfa6-4c20-914c-e9418b4c409f",
+    "label" : "chmiel",
+    "amount" : 500,
+    "processId" : null
+  },
+  {
+    "id" : "231816c3-675e-4870-93c0-65c33234ba24",
+    "label" : "butelki",
+    "amount" : 500,
+    "processId" : null
+  },
+  {
+    "id" : "34237593-0aab-45cd-83e8-32fb2fdbe196",
+    "label" : "beczki",
+    "amount" : 500,
+    "processId" : null
+  },
+  {
+    "id" : "e14ae07b-75b1-47e8-bea2-a1785634dc13",
+    "label" : "pszenica",
+    "amount" : 500,
+    "processId" : null
+  },
+  {
+    "id" : "78c77fa5-47ab-42c4-944f-aa8da6787108",
+    "label" : "oczyszczona pszenica",
+    "amount" : 0,
+    "processId" : "026526a6-f44b-4c28-be30-e2797592bed7"
+  },
+  {
+    "id" : "b6dbbd20-a86e-4a20-b6cf-a4c6742b8832",
+    "label" : "pszenica sortowana",
+    "amount" : 0,
+    "processId" : "026526a6-f44b-4c28-be30-e2797592bed7"
+  },
+  {
+    "id" : "6560b8e6-daa2-4a56-9591-87a539521a28",
+    "label" : "mokra pszenica",
+    "amount" : 0,
+    "processId" : "026526a6-f44b-4c28-be30-e2797592bed7"
+  },
+  {
+    "id" : "13c8f5eb-01cd-4bc7-abff-91d76949e235",
+    "label" : "kiełki",
+    "amount" : 0,
+    "processId" : "026526a6-f44b-4c28-be30-e2797592bed7"
+  },
+  {
+    "id" : "f5fe04b0-7678-4e2b-9bfe-80a912ef4597",
+    "label" : "suszone kiełki",
+    "amount" : 0,
+    "processId" : "026526a6-f44b-4c28-be30-e2797592bed7"
   }
 ]
